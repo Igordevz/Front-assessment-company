@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+main {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background: #000000;
+}
+.container-top h1 {
+  color: #ffffff;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #ffffff 0%,
+    #bcca3e 33%,
+    darkorange 67%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  font-size: 70px;
+  font-weight: 800;
+  color: #dedede;
+}
+.container-top p {
+    font-size:22px;
+  text-align: center;
+  color: gray;
+}
+.container-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+form {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 20px;
+  flex-direction: column;
+  border-radius: 10px;
+  background: #1f1f1f;
+  width: 500px;
+  height: 300px;
+}
+form input {
+  font-size: 30px;
+  padding-left: 20px;
+  border-radius: 10px;
+  background-color: #bcca3e;
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 80%;
+}
+form input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #9edb34;
+  border-radius: 50%;
+  cursor: pointer;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  background-color: #3498db;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* Estilize a faixxa (barra do input range) */
+
+
+form button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  color: white;
+  background: rgb(237, 255, 9);
+  background: linear-gradient(
+    90deg,
+    rgba(237, 255, 9, 1) 0%,
+    rgba(255, 128, 0, 1) 52%
+  );
+  border-radius: 10px;
+  height: 55px;
+  width: 60%;
+  font-size: 20px;
+  transition: 1s;
+}
+
+form label {
+  margin-left: 20px;
+  font-size: 30px;
+  color: #dedede;
+}
+form h2 {
+  color: darkorange;
+}
