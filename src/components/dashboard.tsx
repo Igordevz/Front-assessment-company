@@ -13,7 +13,7 @@ export default function GraphChart() {
     transports: ["websocket"],
   });
 
-  Chart.register(...registerables); // Alteração nesta linha
+  Chart.register(...registerables); 
 
   useEffect(() => {
     axios.get(`${BASEAPI}/get`).then((data) => {
@@ -36,18 +36,18 @@ export default function GraphChart() {
             datasets: [
               {
                 data: response?.range,
-                backgroundColor: "yellow",
+                backgroundColor: "gray",
                 label: `pergunta: ${response?.pergunta}`,
-                borderColor: "yellow",
+                borderColor: "#ff0000",
                 tension: 0.5,
                 fill: false,
                 pointBorderColor: "white",
-                pointBorderWidth: 30,
+                pointBorderWidth: 3,
               },
             ],
           };
           return (
-            <div style={{ background: "#000000", height: "100vh", width: "100%" }}>
+            <div style={{ background: "#000000", height: "50vh", width: "100%" }}>
               <Line data={data} options={opitions}></Line>
             </div>
           );

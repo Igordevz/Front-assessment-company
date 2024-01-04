@@ -4,7 +4,6 @@ import "./index.css";
 import axios from "axios";
 import { BASEAPI } from "@/services/api";
 export default function Feedback() {
-  const [pergunta, setPergunta] = useState("");
   const [res, setRes] = useState("");
 
   const [range, setRange] = useState(0);
@@ -13,7 +12,17 @@ export default function Feedback() {
   async function PostFeedback() {
     await axios.post(`${BASEAPI}/chart`, {
         range: range,
-        pergunta: pergunta
+        pergunta: "1"
+    }).then((data) => {
+        setRes("Obrigado pelo seu feedback")
+    }) .catch(err =>{
+        console.log(err);
+    })
+  }
+  async function PostFeedback2() {
+    await axios.post(`${BASEAPI}/chart`, {
+        range: range2,
+        pergunta: "2"
     }).then((data) => {
         setRes("Obrigado pelo seu feedback")
     }) .catch(err =>{
@@ -36,13 +45,13 @@ export default function Feedback() {
             id="atendimento"
             onChange={(e: any) => {
                 setRange(e.target.value)
-                setPergunta("1")
             }}
             min={0}
             max={10}
             value={range}
           />
           <button onClick={(e) => {
+
             e.preventDefault();
             PostFeedback();
           }}>Enviar</button>
@@ -57,15 +66,15 @@ export default function Feedback() {
             id="atendimento"
             onChange={(e: any) => {
                 setRange2(e.target.value)
-                setPergunta("2")
             }}
             min={0}
             max={10}
             value={range2}
           />
           <button onClick={(e) => {
+
             e.preventDefault();
-            PostFeedback();
+            PostFeedback2();
           }}>Enviar</button>
           <h2 style={{display: "flex", alignItems: "center"}}>Estrelas: {range2} <strong style={{fontSize: 15, marginLeft: 10, color: "#dedede"}}>{res}</strong></h2>
         </form>

@@ -1,10 +1,9 @@
-import Image from 'next/image'
-
+import "./globals.css"
 export default function Home() {
   return (
-   <>
-    <h1>hello word</h1>
-   
-   </>
-  )
+    <main> 
+      <a href="/feedbacks">feedbacks</a>
+      <a href="/dashboard">dashboard</a>
+    </main>
+  );
 }

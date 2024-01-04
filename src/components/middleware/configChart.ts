@@ -9,7 +9,6 @@ export const opitions = {
       zoom: {
         pan: {
           enabled: true,
-          mode: 'xy',
           speed: 10,
           threshold: 10
         },
@@ -20,7 +19,6 @@ export const opitions = {
           pinch: {
             enabled: true
           },
-          mode: 'xy',
         }
       },
       legend: {
